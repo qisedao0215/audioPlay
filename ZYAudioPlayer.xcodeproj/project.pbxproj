@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC5932AC191BABFC00AE9AC9 /* 传奇.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC5932AB191BABFC00AE9AC9 /* 传奇.mp3 */; };
+		CC5932B2191BC59200AE9AC9 /* ZXAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */; };
+		CC5932B3191BC59200AE9AC9 /* ZXAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5932B1191BC59200AE9AC9 /* ZXAudioViewController.xib */; };
+		CC5E6A2B191BCD9A00AED641 /* AudioPlayerPlay.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6A2A191BCD9A00AED641 /* AudioPlayerPlay.png */; };
+		CC5E6A2D191C5C2200AED641 /* AudioPlayerPause.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6A2C191C5C2200AED641 /* AudioPlayerPause.png */; };
+		CC5E6A2F191C5C3800AED641 /* AudioPlayerNextTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6A2E191C5C3800AED641 /* AudioPlayerNextTrack.png */; };
+		CC5E6A31191C5C4300AED641 /* AudioPlayerPrevTrack.png in Resources */ = {isa = PBXBuildFile; fileRef = CC5E6A30191C5C4300AED641 /* AudioPlayerPrevTrack.png */; };
+		CC61F0DA1917B3060020EC0D /* new_features_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC61F0D51917B3060020EC0D /* new_features_1.jpg */; };
+		CC61F0DB1917B3060020EC0D /* new_features_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC61F0D61917B3060020EC0D /* new_features_2.jpg */; };
+		CC61F0DC1917B3060020EC0D /* new_features_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC61F0D71917B3060020EC0D /* new_features_3.jpg */; };
+		CC61F0DD1917B3060020EC0D /* new_features_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC61F0D81917B3060020EC0D /* new_features_4.jpg */; };
+		CC61F0DE1917B3060020EC0D /* new_features_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CC61F0D91917B3060020EC0D /* new_features_5.jpg */; };
+		CC6B3EF0191D164F00260C9D /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EEF191D164F00260C9D /* menu.png */; };
+		CC6B3EF2191D16D300260C9D /* circleOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF1191D16D300260C9D /* circleOpen.png */; };
+		CC6B3EF4191D20E000260C9D /* 媳妇你真好.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF3191D20E000260C9D /* 媳妇你真好.lrc */; };
+		CC6B3EF8191D20EE00260C9D /* 老婆最大.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF5191D20EE00260C9D /* 老婆最大.lrc */; };
+		CC6B3EFA191D20EE00260C9D /* 哥有老婆.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF7191D20EE00260C9D /* 哥有老婆.lrc */; };
 		CCA69DDF1917B0D9009A838A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA69DDE1917B0D9009A838A /* Foundation.framework */; };
 		CCA69DE11917B0D9009A838A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA69DE01917B0D9009A838A /* CoreGraphics.framework */; };
 		CCA69DE31917B0D9009A838A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA69DE21917B0D9009A838A /* UIKit.framework */; };
@@ -19,6 +36,28 @@
 		CCA69DFA1917B0D9009A838A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA69DE21917B0D9009A838A /* UIKit.framework */; };
 		CCA69E021917B0D9009A838A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CCA69E001917B0D9009A838A /* InfoPlist.strings */; };
 		CCA69E041917B0D9009A838A /* ZYAudioPlayerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E031917B0D9009A838A /* ZYAudioPlayerTests.m */; };
+		CCA69E0F1917B124009A838A /* ZXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E0E1917B124009A838A /* ZXLoginViewController.m */; };
+		CCA69E121917B1BE009A838A /* ZXScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E111917B1BE009A838A /* ZXScrollView.m */; };
+		CCA69E151917B26F009A838A /* ZXScrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E141917B26F009A838A /* ZXScrolViewController.m */; };
+		CCD683A2191CC25A0068DE33 /* IMG_1464.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */; };
+		CCDFCA271917D3AA003F7DD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDFCA261917D3AA003F7DD2 /* AVFoundation.framework */; };
+		CCDFCA2A1917DC44003F7DD2 /* sourceALAC.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCDFCA291917DC44003F7DD2 /* sourceALAC.caf */; };
+		CCF89584191C78CE0005EAEF /* 爱情鸟.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89579191C78CE0005EAEF /* 爱情鸟.mp3 */; };
+		CCF89585191C78CE0005EAEF /* 爱囚.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF8957A191C78CE0005EAEF /* 爱囚.mp3 */; };
+		CCF89586191C78CE0005EAEF /* 把悲伤留给自己.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF8957B191C78CE0005EAEF /* 把悲伤留给自己.mp3 */; };
+		CCF89587191C78CE0005EAEF /* 爸爸去哪儿.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF8957C191C78CE0005EAEF /* 爸爸去哪儿.mp3 */; };
+		CCF89588191C78CE0005EAEF /* 哥有老婆.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF8957D191C78CE0005EAEF /* 哥有老婆.mp3 */; };
+		CCF89589191C78CE0005EAEF /* 好男人寂寞了也犯错.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF8957E191C78CE0005EAEF /* 好男人寂寞了也犯错.mp3 */; };
+		CCF8958A191C78CE0005EAEF /* 老婆最大.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF8957F191C78CE0005EAEF /* 老婆最大.mp3 */; };
+		CCF8958B191C78CE0005EAEF /* 媳妇你真好.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89580191C78CE0005EAEF /* 媳妇你真好.mp3 */; };
+		CCF8958C191C78CE0005EAEF /* 一万个舍不得.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89581191C78CE0005EAEF /* 一万个舍不得.mp3 */; };
+		CCF8958D191C78CE0005EAEF /* 月亮惹的祸.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89582191C78CE0005EAEF /* 月亮惹的祸.mp3 */; };
+		CCF8958E191C78CE0005EAEF /* 咱们结婚吧.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89583191C78CE0005EAEF /* 咱们结婚吧.mp3 */; };
+		CCF89590191CAD2F0005EAEF /* 爱情鸟.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF8958F191CAD2F0005EAEF /* 爱情鸟.lrc */; };
+		CCF89594191CADAF0005EAEF /* 爱囚.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF89591191CADAF0005EAEF /* 爱囚.lrc */; };
+		CCF89596191CADAF0005EAEF /* 爸爸去哪儿.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */; };
+		CCF9FE9A191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */; };
+		CCFA44A1191B585F004C963E /* 倩女幽魂.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCFA44A0191B585F004C963E /* 倩女幽魂.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +71,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC5932AB191BABFC00AE9AC9 /* 传奇.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "传奇.mp3"; sourceTree = "<group>"; };
+		CC5932AF191BC59200AE9AC9 /* ZXAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAudioViewController.h; sourceTree = "<group>"; };
+		CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAudioViewController.m; sourceTree = "<group>"; };
+		CC5932B1191BC59200AE9AC9 /* ZXAudioViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXAudioViewController.xib; sourceTree = "<group>"; };
+		CC5E6A2A191BCD9A00AED641 /* AudioPlayerPlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AudioPlayerPlay.png; sourceTree = "<group>"; };
+		CC5E6A2C191C5C2200AED641 /* AudioPlayerPause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AudioPlayerPause.png; sourceTree = "<group>"; };
+		CC5E6A2E191C5C3800AED641 /* AudioPlayerNextTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AudioPlayerNextTrack.png; sourceTree = "<group>"; };
+		CC5E6A30191C5C4300AED641 /* AudioPlayerPrevTrack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AudioPlayerPrevTrack.png; sourceTree = "<group>"; };
+		CC61F0D51917B3060020EC0D /* new_features_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_features_1.jpg; sourceTree = "<group>"; };
+		CC61F0D61917B3060020EC0D /* new_features_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_features_2.jpg; sourceTree = "<group>"; };
+		CC61F0D71917B3060020EC0D /* new_features_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_features_3.jpg; sourceTree = "<group>"; };
+		CC61F0D81917B3060020EC0D /* new_features_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_features_4.jpg; sourceTree = "<group>"; };
+		CC61F0D91917B3060020EC0D /* new_features_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = new_features_5.jpg; sourceTree = "<group>"; };
+		CC6B3EEF191D164F00260C9D /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		CC6B3EF1191D16D300260C9D /* circleOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleOpen.png; sourceTree = "<group>"; };
+		CC6B3EF3191D20E000260C9D /* 媳妇你真好.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "媳妇你真好.lrc"; sourceTree = "<group>"; };
+		CC6B3EF5191D20EE00260C9D /* 老婆最大.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "老婆最大.lrc"; sourceTree = "<group>"; };
+		CC6B3EF7191D20EE00260C9D /* 哥有老婆.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "哥有老婆.lrc"; sourceTree = "<group>"; };
 		CCA69DDB1917B0D9009A838A /* ZYAudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYAudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA69DDE1917B0D9009A838A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CCA69DE01917B0D9009A838A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +105,31 @@
 		CCA69DFF1917B0D9009A838A /* ZYAudioPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZYAudioPlayerTests-Info.plist"; sourceTree = "<group>"; };
 		CCA69E011917B0D9009A838A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CCA69E031917B0D9009A838A /* ZYAudioPlayerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYAudioPlayerTests.m; sourceTree = "<group>"; };
+		CCA69E0D1917B124009A838A /* ZXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXLoginViewController.h; sourceTree = "<group>"; };
+		CCA69E0E1917B124009A838A /* ZXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXLoginViewController.m; sourceTree = "<group>"; };
+		CCA69E101917B1BE009A838A /* ZXScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXScrollView.h; sourceTree = "<group>"; };
+		CCA69E111917B1BE009A838A /* ZXScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScrollView.m; sourceTree = "<group>"; };
+		CCA69E131917B26F009A838A /* ZXScrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXScrolViewController.h; sourceTree = "<group>"; };
+		CCA69E141917B26F009A838A /* ZXScrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScrolViewController.m; sourceTree = "<group>"; };
+		CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1464.JPG; sourceTree = "<group>"; };
+		CCDFCA261917D3AA003F7DD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		CCDFCA291917DC44003F7DD2 /* sourceALAC.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sourceALAC.caf; sourceTree = "<group>"; };
+		CCF89579191C78CE0005EAEF /* 爱情鸟.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "爱情鸟.mp3"; sourceTree = "<group>"; };
+		CCF8957A191C78CE0005EAEF /* 爱囚.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "爱囚.mp3"; sourceTree = "<group>"; };
+		CCF8957B191C78CE0005EAEF /* 把悲伤留给自己.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "把悲伤留给自己.mp3"; sourceTree = "<group>"; };
+		CCF8957C191C78CE0005EAEF /* 爸爸去哪儿.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "爸爸去哪儿.mp3"; sourceTree = "<group>"; };
+		CCF8957D191C78CE0005EAEF /* 哥有老婆.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "哥有老婆.mp3"; sourceTree = "<group>"; };
+		CCF8957E191C78CE0005EAEF /* 好男人寂寞了也犯错.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "好男人寂寞了也犯错.mp3"; sourceTree = "<group>"; };
+		CCF8957F191C78CE0005EAEF /* 老婆最大.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "老婆最大.mp3"; sourceTree = "<group>"; };
+		CCF89580191C78CE0005EAEF /* 媳妇你真好.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "媳妇你真好.mp3"; sourceTree = "<group>"; };
+		CCF89581191C78CE0005EAEF /* 一万个舍不得.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "一万个舍不得.mp3"; sourceTree = "<group>"; };
+		CCF89582191C78CE0005EAEF /* 月亮惹的祸.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "月亮惹的祸.mp3"; sourceTree = "<group>"; };
+		CCF89583191C78CE0005EAEF /* 咱们结婚吧.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "咱们结婚吧.mp3"; sourceTree = "<group>"; };
+		CCF8958F191CAD2F0005EAEF /* 爱情鸟.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爱情鸟.lrc"; sourceTree = "<group>"; };
+		CCF89591191CADAF0005EAEF /* 爱囚.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爱囚.lrc"; sourceTree = "<group>"; };
+		CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爸爸去哪儿.lrc"; sourceTree = "<group>"; };
+		CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "好男人寂寞了也犯错.lrc"; sourceTree = "<group>"; };
+		CCFA44A0191B585F004C963E /* 倩女幽魂.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "倩女幽魂.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCDFCA271917D3AA003F7DD2 /* AVFoundation.framework in Frameworks */,
 				CCA69DE11917B0D9009A838A /* CoreGraphics.framework in Frameworks */,
 				CCA69DE31917B0D9009A838A /* UIKit.framework in Frameworks */,
 				CCA69DDF1917B0D9009A838A /* Foundation.framework in Frameworks */,
@@ -74,6 +157,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC5E6A29191BCD6300AED641 /* controllerImage */ = {
+			isa = PBXGroup;
+			children = (
+				CC6B3EF1191D16D300260C9D /* circleOpen.png */,
+				CC6B3EEF191D164F00260C9D /* menu.png */,
+				CC5E6A2C191C5C2200AED641 /* AudioPlayerPause.png */,
+				CC5E6A2E191C5C3800AED641 /* AudioPlayerNextTrack.png */,
+				CC5E6A2A191BCD9A00AED641 /* AudioPlayerPlay.png */,
+				CC5E6A30191C5C4300AED641 /* AudioPlayerPrevTrack.png */,
+			);
+			name = controllerImage;
+			sourceTree = "<group>";
+		};
+		CC61F0D41917B2E40020EC0D /* image */ = {
+			isa = PBXGroup;
+			children = (
+				CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */,
+				CC61F0D51917B3060020EC0D /* new_features_1.jpg */,
+				CC61F0D61917B3060020EC0D /* new_features_2.jpg */,
+				CC61F0D71917B3060020EC0D /* new_features_3.jpg */,
+				CC61F0D81917B3060020EC0D /* new_features_4.jpg */,
+				CC61F0D91917B3060020EC0D /* new_features_5.jpg */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		CC6B3EFB191D212E00260C9D /* musicLrc */ = {
+			isa = PBXGroup;
+			children = (
+				CCF8958F191CAD2F0005EAEF /* 爱情鸟.lrc */,
+				CCF89591191CADAF0005EAEF /* 爱囚.lrc */,
+				CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */,
+				CC6B3EF5191D20EE00260C9D /* 老婆最大.lrc */,
+				CC6B3EF7191D20EE00260C9D /* 哥有老婆.lrc */,
+				CC6B3EF3191D20E000260C9D /* 媳妇你真好.lrc */,
+				CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */,
+			);
+			name = musicLrc;
+			sourceTree = "<group>";
+		};
 		CCA69DD21917B0D9009A838A = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +219,7 @@
 		CCA69DDD1917B0D9009A838A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CCDFCA261917D3AA003F7DD2 /* AVFoundation.framework */,
 				CCA69DDE1917B0D9009A838A /* Foundation.framework */,
 				CCA69DE01917B0D9009A838A /* CoreGraphics.framework */,
 				CCA69DE21917B0D9009A838A /* UIKit.framework */,
@@ -109,6 +233,18 @@
 			children = (
 				CCA69DED1917B0D9009A838A /* AppDelegate.h */,
 				CCA69DEE1917B0D9009A838A /* AppDelegate.m */,
+				CCA69E0D1917B124009A838A /* ZXLoginViewController.h */,
+				CCA69E0E1917B124009A838A /* ZXLoginViewController.m */,
+				CC5932AF191BC59200AE9AC9 /* ZXAudioViewController.h */,
+				CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */,
+				CC5932B1191BC59200AE9AC9 /* ZXAudioViewController.xib */,
+				CCA69E131917B26F009A838A /* ZXScrolViewController.h */,
+				CCA69E141917B26F009A838A /* ZXScrolViewController.m */,
+				CCA69E101917B1BE009A838A /* ZXScrollView.h */,
+				CCA69E111917B1BE009A838A /* ZXScrollView.m */,
+				CC5E6A29191BCD6300AED641 /* controllerImage */,
+				CCE748C41918689300EBF617 /* audio */,
+				CC61F0D41917B2E40020EC0D /* image */,
 				CCA69DF01917B0D9009A838A /* Images.xcassets */,
 				CCA69DE51917B0D9009A838A /* Supporting Files */,
 			);
@@ -142,6 +278,28 @@
 				CCA69E001917B0D9009A838A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CCE748C41918689300EBF617 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				CC6B3EFB191D212E00260C9D /* musicLrc */,
+				CCF89579191C78CE0005EAEF /* 爱情鸟.mp3 */,
+				CCF8957A191C78CE0005EAEF /* 爱囚.mp3 */,
+				CCF8957B191C78CE0005EAEF /* 把悲伤留给自己.mp3 */,
+				CCF8957C191C78CE0005EAEF /* 爸爸去哪儿.mp3 */,
+				CCF8957D191C78CE0005EAEF /* 哥有老婆.mp3 */,
+				CCF8957E191C78CE0005EAEF /* 好男人寂寞了也犯错.mp3 */,
+				CCF8957F191C78CE0005EAEF /* 老婆最大.mp3 */,
+				CCF89580191C78CE0005EAEF /* 媳妇你真好.mp3 */,
+				CCF89581191C78CE0005EAEF /* 一万个舍不得.mp3 */,
+				CCF89582191C78CE0005EAEF /* 月亮惹的祸.mp3 */,
+				CCF89583191C78CE0005EAEF /* 咱们结婚吧.mp3 */,
+				CC5932AB191BABFC00AE9AC9 /* 传奇.mp3 */,
+				CCDFCA291917DC44003F7DD2 /* sourceALAC.caf */,
+				CCFA44A0191B585F004C963E /* 倩女幽魂.mp3 */,
+			);
+			name = audio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +377,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6B3EF2191D16D300260C9D /* circleOpen.png in Resources */,
+				CCF89594191CADAF0005EAEF /* 爱囚.lrc in Resources */,
+				CCF8958A191C78CE0005EAEF /* 老婆最大.mp3 in Resources */,
+				CC6B3EF4191D20E000260C9D /* 媳妇你真好.lrc in Resources */,
+				CCDFCA2A1917DC44003F7DD2 /* sourceALAC.caf in Resources */,
+				CC5932B3191BC59200AE9AC9 /* ZXAudioViewController.xib in Resources */,
+				CCF89587191C78CE0005EAEF /* 爸爸去哪儿.mp3 in Resources */,
+				CCF89589191C78CE0005EAEF /* 好男人寂寞了也犯错.mp3 in Resources */,
+				CCF89588191C78CE0005EAEF /* 哥有老婆.mp3 in Resources */,
+				CCF89590191CAD2F0005EAEF /* 爱情鸟.lrc in Resources */,
+				CC5E6A2F191C5C3800AED641 /* AudioPlayerNextTrack.png in Resources */,
+				CC5E6A2D191C5C2200AED641 /* AudioPlayerPause.png in Resources */,
+				CCF89586191C78CE0005EAEF /* 把悲伤留给自己.mp3 in Resources */,
 				CCA69DE91917B0D9009A838A /* InfoPlist.strings in Resources */,
+				CCFA44A1191B585F004C963E /* 倩女幽魂.mp3 in Resources */,
+				CC61F0DE1917B3060020EC0D /* new_features_5.jpg in Resources */,
+				CCF89585191C78CE0005EAEF /* 爱囚.mp3 in Resources */,
+				CC6B3EF0191D164F00260C9D /* menu.png in Resources */,
+				CC61F0DA1917B3060020EC0D /* new_features_1.jpg in Resources */,
+				CC6B3EFA191D20EE00260C9D /* 哥有老婆.lrc in Resources */,
+				CC5932AC191BABFC00AE9AC9 /* 传奇.mp3 in Resources */,
+				CC61F0DB1917B3060020EC0D /* new_features_2.jpg in Resources */,
+				CCF89584191C78CE0005EAEF /* 爱情鸟.mp3 in Resources */,
 				CCA69DF11917B0D9009A838A /* Images.xcassets in Resources */,
+				CCF8958C191C78CE0005EAEF /* 一万个舍不得.mp3 in Resources */,
+				CCD683A2191CC25A0068DE33 /* IMG_1464.JPG in Resources */,
+				CC6B3EF8191D20EE00260C9D /* 老婆最大.lrc in Resources */,
+				CCF9FE9A191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc in Resources */,
+				CC61F0DD1917B3060020EC0D /* new_features_4.jpg in Resources */,
+				CC61F0DC1917B3060020EC0D /* new_features_3.jpg in Resources */,
+				CCF8958D191C78CE0005EAEF /* 月亮惹的祸.mp3 in Resources */,
+				CC5E6A31191C5C4300AED641 /* AudioPlayerPrevTrack.png in Resources */,
+				CC5E6A2B191BCD9A00AED641 /* AudioPlayerPlay.png in Resources */,
+				CCF8958E191C78CE0005EAEF /* 咱们结婚吧.mp3 in Resources */,
+				CCF89596191CADAF0005EAEF /* 爸爸去哪儿.lrc in Resources */,
+				CCF8958B191C78CE0005EAEF /* 媳妇你真好.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +432,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA69DEF1917B0D9009A838A /* AppDelegate.m in Sources */,
+				CCA69E121917B1BE009A838A /* ZXScrollView.m in Sources */,
+				CCA69E151917B26F009A838A /* ZXScrolViewController.m in Sources */,
 				CCA69DEB1917B0D9009A838A /* main.m in Sources */,
+				CCA69E0F1917B124009A838A /* ZXLoginViewController.m in Sources */,
+				CC5932B2191BC59200AE9AC9 /* ZXAudioViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +553,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZYAudioPlayer/ZYAudioPlayer-Prefix.pch";
 				INFOPLIST_FILE = "ZYAudioPlayer/ZYAudioPlayer-Info.plist";
@@ -370,6 +567,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZYAudioPlayer/ZYAudioPlayer-Prefix.pch";
 				INFOPLIST_FILE = "ZYAudioPlayer/ZYAudioPlayer-Info.plist";
@@ -437,6 +635,7 @@
 				CCA69E091917B0D9009A838A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CCA69E0A1917B0D9009A838A /* Build configuration list for PBXNativeTarget "ZYAudioPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +644,7 @@
 				CCA69E0C1917B0D9009A838A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
