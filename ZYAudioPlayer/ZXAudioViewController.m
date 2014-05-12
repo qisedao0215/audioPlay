@@ -42,8 +42,9 @@
     return self;
 }
 - (IBAction)playNext:(UIButton *)sender {
+    
     if (self.countMusic == [self.musicFile count]-1) {
-        self.countMusic=0;
+        self.countMusic=-1;
     }
     self.musicStr=self.musicFile[self.countMusic+=1];
     [self playMusic];
@@ -74,6 +75,8 @@
     [self.audioPlay stop];
     playMusicStat=NO;
     
+    self.musicStr=self.musicFile[self.countMusic];
+    
     NSURL *strURL=[[NSBundle mainBundle]URLForResource:self.musicStr withExtension:self.extension];
     self.audioPlay=[[AVAudioPlayer alloc]initWithContentsOfURL:strURL error:nil];
     [self.audioPlay prepareToPlay];
@@ -94,34 +97,73 @@
     
     timerArray =[[NSMutableArray alloc]init];
     lrcDictionary=[[NSMutableDictionary alloc]initWithCapacity:20];
+    lrcDictionary=[self musicLrc:self.musicStr];
   
-    NSString *strMusicUrl=[[NSBundle mainBundle]pathForResource:self.musicStr ofType:@"lrc"];
-    NSString *strLrcKu=[NSString stringWithContentsOfFile:strMusicUrl encoding:NSUTF8StringEncoding error:nil];
-    NSArray *strlineArray=[strLrcKu componentsSeparatedByString:@"\n"];
-    for (int i=0; i<[strlineArray count]; i++) {
-        NSString *lineStrKu=[strlineArray objectAtIndex:i];
-        NSArray *lineComponents=[lineStrKu componentsSeparatedByString:@"]"];
-        for (int n=0; n<[lineComponents count]; n++) {
-
-                if ([lineComponents[n] length]==9) {
-                    NSString *strKuTimer = lineComponents[n];
-                    NSString *str1=[strKuTimer substringWithRange:NSMakeRange(3, 1)];
-                    NSString *str2=[strKuTimer substringWithRange:NSMakeRange(6, 1)];
-                    
-                    if ([str1 isEqualToString:@":"]&&[str2 isEqualToString:@"."]) {
-                        NSString *lineTimer=[[lineComponents objectAtIndex:n] substringWithRange:NSMakeRange(1, 5)];
-                        NSString *lineStr=[lineComponents objectAtIndex:([lineComponents count]-1)];
-                        [lrcDictionary setObject:lineStr forKey:lineTimer];
-                    
-                    }
-                }
-        }
-    }
+//    NSString *strMusicUrl=[[NSBundle mainBundle]pathForResource:self.musicStr ofType:@"lrc"];
+//    NSString *strLrcKu=[NSString stringWithContentsOfFile:strMusicUrl encoding:NSUTF8StringEncoding error:nil];
+//    NSArray *strlineArray=[strLrcKu componentsSeparatedByString:@"\n"];
+//    for (int i=0; i<[strlineArray count]; i++) {
+//        NSString *lineStrKu=[strlineArray objectAtIndex:i];
+//        NSArray *lineComponents=[lineStrKu componentsSeparatedByString:@"]"];
+//        for (int n=0; n<[lineComponents count]; n++) {
+//
+//                if ([lineComponents[n] length]==9) {
+//                    NSString *strKuTimer = lineComponents[n];
+//                    NSString *str1=[strKuTimer substringWithRange:NSMakeRange(3, 1)];
+//                    NSString *str2=[strKuTimer substringWithRange:NSMakeRange(6, 1)];
+//                    
+//                    if ([str1 isEqualToString:@":"]&&[str2 isEqualToString:@"."]) {
+//                        NSString *lineTimer=[[lineComponents objectAtIndex:n] substringWithRange:NSMakeRange(1, 5)];
+//                        NSString *lineStr=[lineComponents objectAtIndex:([lineComponents count]-1)];
+//                        [lrcDictionary setObject:lineStr forKey:lineTimer];
+//                    
+//                    }
+//                }
+//        }
+//    }
     timerArray = [[lrcDictionary allKeys] mutableCopy];
     [timerArray sortUsingSelector:@selector(compare:)];
     playMusicStat=YES;
 
 }
+
+-(NSMutableDictionary*)musicLrc:(NSString*)musicName
+{
+    
+    //    初始化一个字典
+    NSMutableDictionary *musicLrcDictionary=[[NSMutableDictionary alloc]initWithCapacity:20];
+    //    加载歌词到内存
+    NSString *strMusicUrl=[[NSBundle mainBundle]pathForResource:musicName ofType:@"lrc"];
+    NSString *strLrcKu=[NSString stringWithContentsOfFile:strMusicUrl encoding:NSUTF8StringEncoding error:nil];
+    //    把文件安行分割，以每行为单位放入数组
+    NSArray *strlineArray=[strLrcKu componentsSeparatedByString:@"\n"];
+    //    安行读取歌词歌词
+    for (int i=0; i<[strlineArray count]; i++) {
+        //      将时间和歌词分割
+        NSArray *lineComponents=[[strlineArray objectAtIndex:i] componentsSeparatedByString:@"]"];
+        //        取出每行的时间  注意有些歌词是重复使用的，所以会有多个时间点
+        for (int n=0; n<[lineComponents count]; n++) {
+            NSString *strKuTimer = lineComponents[n];
+            if ([strKuTimer length]==9) {
+                //    取出“:”和“.”符号来对比，是否是我们所需要的时间
+                NSString *str1=[strKuTimer substringWithRange:NSMakeRange(3, 1)];
+                NSString *str2=[strKuTimer substringWithRange:NSMakeRange(6, 1)];
+                if ([str1 isEqualToString:@":"]&&[str2 isEqualToString:@"."]) {
+                    //    将时间和歌词暂时放在两个字符串里
+                    NSString *lineTimer=[[lineComponents objectAtIndex:n] substringWithRange:NSMakeRange(1, 5)];
+                    NSString *lineStr=[lineComponents objectAtIndex:([lineComponents count]-1)];
+                    //    以时间为key,歌词为值，放入字典中
+                    [musicLrcDictionary setObject:lineStr forKey:lineTimer];
+                }
+            } 
+        }
+    }
+    //    在这里返回整个字典
+    return musicLrcDictionary;
+    
+}
+
+
 
 - (void)viewDidLoad
 {
@@ -140,7 +182,7 @@
     self.sliderVolume.maximumValue=1.0;
     self.sliderVolume.minimumValue=0.0;
     
-    self.musicStr=self.musicFile[self.countMusic];
+    
     
     [self playMusic];
     [self.playBtn setImage:[UIImage imageNamed:@"AudioPlayerPlay"] forState:UIControlStateNormal];
@@ -265,3 +307,5 @@
     
 }
 @end
+
+

@@ -57,6 +57,10 @@
 		CCF89594191CADAF0005EAEF /* 爱囚.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF89591191CADAF0005EAEF /* 爱囚.lrc */; };
 		CCF89596191CADAF0005EAEF /* 爸爸去哪儿.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */; };
 		CCF9FE9A191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */; };
+		CCF9FE9E192079EF00EF9B5A /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCF9FE9D192079EF00EF9B5A /* Images-2.xcassets */; };
+		CCF9FEA019207A9400EF9B5A /* iconasdf.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF9FE9F19207A9400EF9B5A /* iconasdf.png */; };
+		CCF9FEA21920A01100EF9B5A /* Images-3.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCF9FEA11920A01100EF9B5A /* Images-3.xcassets */; };
+		CCF9FEA41920A07200EF9B5A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CCF9FEA31920A07200EF9B5A /* Default-568h@2x.png */; };
 		CCFA44A1191B585F004C963E /* 倩女幽魂.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCFA44A0191B585F004C963E /* 倩女幽魂.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +133,10 @@
 		CCF89591191CADAF0005EAEF /* 爱囚.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爱囚.lrc"; sourceTree = "<group>"; };
 		CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爸爸去哪儿.lrc"; sourceTree = "<group>"; };
 		CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "好男人寂寞了也犯错.lrc"; sourceTree = "<group>"; };
+		CCF9FE9D192079EF00EF9B5A /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
+		CCF9FE9F19207A9400EF9B5A /* iconasdf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconasdf.png; sourceTree = "<group>"; };
+		CCF9FEA11920A01100EF9B5A /* Images-3.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-3.xcassets"; sourceTree = "<group>"; };
+		CCF9FEA31920A07200EF9B5A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CCFA44A0191B585F004C963E /* 倩女幽魂.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "倩女幽魂.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +181,7 @@
 		CC61F0D41917B2E40020EC0D /* image */ = {
 			isa = PBXGroup;
 			children = (
+				CCF9FE9F19207A9400EF9B5A /* iconasdf.png */,
 				CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */,
 				CC61F0D51917B3060020EC0D /* new_features_1.jpg */,
 				CC61F0D61917B3060020EC0D /* new_features_2.jpg */,
@@ -200,6 +209,7 @@
 		CCA69DD21917B0D9009A838A = {
 			isa = PBXGroup;
 			children = (
+				CCF9FEA31920A07200EF9B5A /* Default-568h@2x.png */,
 				CCA69DE41917B0D9009A838A /* ZYAudioPlayer */,
 				CCA69DFD1917B0D9009A838A /* ZYAudioPlayerTests */,
 				CCA69DDD1917B0D9009A838A /* Frameworks */,
@@ -246,6 +256,8 @@
 				CCE748C41918689300EBF617 /* audio */,
 				CC61F0D41917B2E40020EC0D /* image */,
 				CCA69DF01917B0D9009A838A /* Images.xcassets */,
+				CCF9FE9D192079EF00EF9B5A /* Images-2.xcassets */,
+				CCF9FEA11920A01100EF9B5A /* Images-3.xcassets */,
 				CCA69DE51917B0D9009A838A /* Supporting Files */,
 			);
 			path = ZYAudioPlayer;
@@ -377,6 +389,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCF9FE9E192079EF00EF9B5A /* Images-2.xcassets in Resources */,
 				CC6B3EF2191D16D300260C9D /* circleOpen.png in Resources */,
 				CCF89594191CADAF0005EAEF /* 爱囚.lrc in Resources */,
 				CCF8958A191C78CE0005EAEF /* 老婆最大.mp3 in Resources */,
@@ -389,6 +402,7 @@
 				CCF89590191CAD2F0005EAEF /* 爱情鸟.lrc in Resources */,
 				CC5E6A2F191C5C3800AED641 /* AudioPlayerNextTrack.png in Resources */,
 				CC5E6A2D191C5C2200AED641 /* AudioPlayerPause.png in Resources */,
+				CCF9FEA41920A07200EF9B5A /* Default-568h@2x.png in Resources */,
 				CCF89586191C78CE0005EAEF /* 把悲伤留给自己.mp3 in Resources */,
 				CCA69DE91917B0D9009A838A /* InfoPlist.strings in Resources */,
 				CCFA44A1191B585F004C963E /* 倩女幽魂.mp3 in Resources */,
@@ -398,6 +412,7 @@
 				CC61F0DA1917B3060020EC0D /* new_features_1.jpg in Resources */,
 				CC6B3EFA191D20EE00260C9D /* 哥有老婆.lrc in Resources */,
 				CC5932AC191BABFC00AE9AC9 /* 传奇.mp3 in Resources */,
+				CCF9FEA21920A01100EF9B5A /* Images-3.xcassets in Resources */,
 				CC61F0DB1917B3060020EC0D /* new_features_2.jpg in Resources */,
 				CCF89584191C78CE0005EAEF /* 爱情鸟.mp3 in Resources */,
 				CCA69DF11917B0D9009A838A /* Images.xcassets in Resources */,
@@ -412,6 +427,7 @@
 				CC5E6A2B191BCD9A00AED641 /* AudioPlayerPlay.png in Resources */,
 				CCF8958E191C78CE0005EAEF /* 咱们结婚吧.mp3 in Resources */,
 				CCF89596191CADAF0005EAEF /* 爸爸去哪儿.lrc in Resources */,
+				CCF9FEA019207A9400EF9B5A /* iconasdf.png in Resources */,
 				CCF8958B191C78CE0005EAEF /* 媳妇你真好.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,7 +568,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZYAudioPlayer/ZYAudioPlayer-Prefix.pch";
@@ -566,7 +581,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZYAudioPlayer/ZYAudioPlayer-Prefix.pch";
