@@ -1,0 +1,267 @@
+//
+//  ZXAudioViewController.m
+//  ZYAudioPlayer
+//
+//  Created by qingyun on 14-5-8.
+//  Copyright (c) 2014年 qingyun. All rights reserved.
+//
+
+#import "ZXAudioViewController.h"
+#import <AVFoundation/AVFoundation.h>
+
+@interface ZXAudioViewController ()
+@property (retain, nonatomic) IBOutlet UISlider *sliderVolume;
+@property (retain, nonatomic) IBOutlet UISlider *sliderDuration;
+@property (retain, nonatomic) IBOutlet UIButton *playBtn;
+@property (retain, nonatomic) IBOutlet UILabel *labelView;
+@property (retain, nonatomic) IBOutlet UILabel *lrcLabel;
+@property (retain, nonatomic) IBOutlet UILabel *timerLabelView;
+@property (retain, nonatomic) IBOutlet UILabel *timerView;
+
+@property(nonatomic,retain) AVAudioPlayer *audioPlay;
+
+
+@end
+
+@implementation ZXAudioViewController
+{
+    NSMutableArray *timerArray;
+    NSMutableDictionary *lrcDictionary;
+  
+    BOOL playMusicStat;
+
+}
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+        self.countMusic=5;
+        
+    }
+    return self;
+}
+- (IBAction)playNext:(UIButton *)sender {
+    if (self.countMusic == [self.musicFile count]-1) {
+        self.countMusic=0;
+    }
+    self.musicStr=self.musicFile[self.countMusic+=1];
+    [self playMusic];
+    [self.audioPlay play];
+    
+}
+- (IBAction)playPrev:(UIButton *)sender {
+    if (self.countMusic < 1) {
+        self.countMusic = [self.musicFile count];
+    }
+
+    self.musicStr=self.musicFile[self.countMusic-=1];
+    [self playMusic];
+    [self.audioPlay play];
+    
+}
+
+//-(void)
+
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+    [self playNext:nil];
+}
+
+-(void)playMusic
+{
+    [self.audioPlay stop];
+    playMusicStat=NO;
+    
+    NSURL *strURL=[[NSBundle mainBundle]URLForResource:self.musicStr withExtension:self.extension];
+    self.audioPlay=[[AVAudioPlayer alloc]initWithContentsOfURL:strURL error:nil];
+    [self.audioPlay prepareToPlay];
+    self.audioPlay.delegate =self;
+
+    self.sliderDuration.value=0;
+    self.sliderDuration.maximumValue=self.audioPlay.duration;
+    
+    
+    [self.playBtn setImage:[UIImage imageNamed:@"AudioPlayerPause"] forState:UIControlStateNormal];
+    
+    self.labelView.text=self.musicFile[self.countMusic];
+    
+    self.lrcLabel.text=self.musicFile[self.countMusic];
+    
+    timerArray=nil;
+    lrcDictionary=nil;
+    
+    timerArray =[[NSMutableArray alloc]init];
+    lrcDictionary=[[NSMutableDictionary alloc]initWithCapacity:20];
+  
+    NSString *strMusicUrl=[[NSBundle mainBundle]pathForResource:self.musicStr ofType:@"lrc"];
+    NSString *strLrcKu=[NSString stringWithContentsOfFile:strMusicUrl encoding:NSUTF8StringEncoding error:nil];
+    NSArray *strlineArray=[strLrcKu componentsSeparatedByString:@"\n"];
+    for (int i=0; i<[strlineArray count]; i++) {
+        NSString *lineStrKu=[strlineArray objectAtIndex:i];
+        NSArray *lineComponents=[lineStrKu componentsSeparatedByString:@"]"];
+        for (int n=0; n<[lineComponents count]; n++) {
+
+                if ([lineComponents[n] length]==9) {
+                    NSString *strKuTimer = lineComponents[n];
+                    NSString *str1=[strKuTimer substringWithRange:NSMakeRange(3, 1)];
+                    NSString *str2=[strKuTimer substringWithRange:NSMakeRange(6, 1)];
+                    
+                    if ([str1 isEqualToString:@":"]&&[str2 isEqualToString:@"."]) {
+                        NSString *lineTimer=[[lineComponents objectAtIndex:n] substringWithRange:NSMakeRange(1, 5)];
+                        NSString *lineStr=[lineComponents objectAtIndex:([lineComponents count]-1)];
+                        [lrcDictionary setObject:lineStr forKey:lineTimer];
+                    
+                    }
+                }
+        }
+    }
+    timerArray = [[lrcDictionary allKeys] mutableCopy];
+    [timerArray sortUsingSelector:@selector(compare:)];
+    playMusicStat=YES;
+
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+    
+    
+    self.navigationController.navigationBarHidden=NO;
+    self.navigationItem.hidesBackButton=NO;
+
+    self.view.backgroundColor=[UIColor redColor];
+
+    self.labelView.tintColor=[UIColor greenColor];
+    
+    self.sliderVolume.value=0.5;
+    self.sliderVolume.maximumValue=1.0;
+    self.sliderVolume.minimumValue=0.0;
+    
+    self.musicStr=self.musicFile[self.countMusic];
+    
+    [self playMusic];
+    [self.playBtn setImage:[UIImage imageNamed:@"AudioPlayerPlay"] forState:UIControlStateNormal];
+    
+    
+    playMusicStat=YES;
+    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+   
+    
+}
+- (IBAction)sliderVolume:(UISlider *)sender {
+    self.audioPlay.volume=sender.value;
+
+}
+- (IBAction)onBtn:(UIButton *)sender {
+    
+    if ([self.audioPlay isPlaying]) {
+        [sender setImage:[UIImage imageNamed:@"AudioPlayerPlay"] forState:UIControlStateNormal];
+        [self.audioPlay pause];
+        playMusicStat=NO;
+        
+    }else{
+        [self.audioPlay play];
+        [sender setImage:[UIImage imageNamed:@"AudioPlayerPause"] forState:UIControlStateNormal];
+        playMusicStat=YES;
+    }
+}
+- (IBAction)sliderDuration:(UISlider *)sender {
+    self.audioPlay.currentTime = sender.value;
+}
+-(void)onTimer:(NSTimer*)sender
+{
+    if (playMusicStat) {
+
+        NSUInteger timer=(int)self.audioPlay.currentTime;
+        if ((int)timer % 60 < 10) {
+            self.timerLabelView.text = [NSString stringWithFormat:@"0%d:0%d",timer / 60, timer % 60];
+        } else {
+            self.timerLabelView.text = [NSString stringWithFormat:@"0%d:%d",timer / 60, timer % 60];
+        }
+        
+        self.sliderDuration.value=timer;
+
+        
+        for (int i=0; i < [timerArray count]; i++) {
+            NSArray *array = [timerArray[i] componentsSeparatedByString:@":"];
+            NSUInteger currentTime = [array[0] intValue] * 60 + [array[1] intValue];
+            if (i==([timerArray count]-1)) {
+                NSArray *array1 = [timerArray[[timerArray count]-1] componentsSeparatedByString:@":"];
+                NSUInteger currentTime1 = [array1[0] intValue] * 60 + [array1[1] intValue];
+                
+                if (timer < currentTime1) {
+                    
+                    NSString *lrcLabelStr=[lrcDictionary objectForKey:self.timerLabelView.text];
+                    if (lrcLabelStr) {
+                        self.lrcLabel.text=lrcLabelStr;
+                        break;
+                    }
+                }
+            }else{
+                NSArray *array2 = [timerArray[0] componentsSeparatedByString:@":"];
+                NSUInteger currentTime2 = [array2[0] intValue] * 60 + [array2[1] intValue];
+                
+                if (timer < currentTime2) {
+                    
+                    NSString *lrcLabelStr=[lrcDictionary objectForKey:self.timerLabelView.text];
+                    if (lrcLabelStr) {
+                        self.lrcLabel.text=lrcLabelStr;
+                        break;
+                    }
+                }
+                NSArray *array3 = [timerArray[i+1] componentsSeparatedByString:@":"];
+                NSUInteger currentTime3 = [array3[0] intValue] * 60 + [array3[1] intValue];
+                
+                if (timer >= currentTime && timer <= currentTime3) {
+                    
+                    NSString *lrcLabelStr=[lrcDictionary objectForKey:self.timerLabelView.text];
+                    if (lrcLabelStr) {
+                        self.lrcLabel.text=lrcLabelStr;
+                        
+                        break;
+                    }
+                }
+
+
+            
+            
+            }
+            
+        }
+    }
+}
+
+
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [self.audioPlay stop];
+    playMusicStat=NO;
+}
+
+- (void)dealloc {
+    
+    [_extension release];
+    [_musicFile release];
+    [_musicStr release];
+    [_audioPlay release];
+    [_sliderDuration release];
+    [_sliderVolume release];
+    [_playBtn release];
+    [_labelView release];
+    [_lrcLabel release];
+    [_timerLabelView release];
+    [_timerView release];
+    [super dealloc];
+    
+}
+@end
