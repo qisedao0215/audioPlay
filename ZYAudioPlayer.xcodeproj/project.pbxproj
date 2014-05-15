@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2197211924A05400FC3923 /* ZXAudioPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2197201924A05400FC3923 /* ZXAudioPlayView.m */; };
 		CC5932AC191BABFC00AE9AC9 /* 传奇.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC5932AB191BABFC00AE9AC9 /* 传奇.mp3 */; };
 		CC5932B2191BC59200AE9AC9 /* ZXAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */; };
 		CC5932B3191BC59200AE9AC9 /* ZXAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5932B1191BC59200AE9AC9 /* ZXAudioViewController.xib */; };
@@ -39,6 +40,7 @@
 		CCA69E0F1917B124009A838A /* ZXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E0E1917B124009A838A /* ZXLoginViewController.m */; };
 		CCA69E121917B1BE009A838A /* ZXScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E111917B1BE009A838A /* ZXScrollView.m */; };
 		CCA69E151917B26F009A838A /* ZXScrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E141917B26F009A838A /* ZXScrolViewController.m */; };
+		CCC0DF1A1924662C0086C30A /* ZXMusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC0DF191924662C0086C30A /* ZXMusicTableViewController.m */; };
 		CCD683A2191CC25A0068DE33 /* IMG_1464.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */; };
 		CCDFCA271917D3AA003F7DD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDFCA261917D3AA003F7DD2 /* AVFoundation.framework */; };
 		CCDFCA2A1917DC44003F7DD2 /* sourceALAC.caf in Resources */ = {isa = PBXBuildFile; fileRef = CCDFCA291917DC44003F7DD2 /* sourceALAC.caf */; };
@@ -75,6 +77,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC21971F1924A05400FC3923 /* ZXAudioPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAudioPlayView.h; sourceTree = "<group>"; };
+		CC2197201924A05400FC3923 /* ZXAudioPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAudioPlayView.m; sourceTree = "<group>"; };
 		CC5932AB191BABFC00AE9AC9 /* 传奇.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "传奇.mp3"; sourceTree = "<group>"; };
 		CC5932AF191BC59200AE9AC9 /* ZXAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAudioViewController.h; sourceTree = "<group>"; };
 		CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAudioViewController.m; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 		CCA69E111917B1BE009A838A /* ZXScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScrollView.m; sourceTree = "<group>"; };
 		CCA69E131917B26F009A838A /* ZXScrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXScrolViewController.h; sourceTree = "<group>"; };
 		CCA69E141917B26F009A838A /* ZXScrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScrolViewController.m; sourceTree = "<group>"; };
+		CCC0DF181924662C0086C30A /* ZXMusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMusicTableViewController.h; sourceTree = "<group>"; };
+		CCC0DF191924662C0086C30A /* ZXMusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMusicTableViewController.m; sourceTree = "<group>"; };
 		CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1464.JPG; sourceTree = "<group>"; };
 		CCDFCA261917D3AA003F7DD2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CCDFCA291917DC44003F7DD2 /* sourceALAC.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sourceALAC.caf; sourceTree = "<group>"; };
@@ -248,6 +254,10 @@
 				CC5932AF191BC59200AE9AC9 /* ZXAudioViewController.h */,
 				CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */,
 				CC5932B1191BC59200AE9AC9 /* ZXAudioViewController.xib */,
+				CCC0DF181924662C0086C30A /* ZXMusicTableViewController.h */,
+				CCC0DF191924662C0086C30A /* ZXMusicTableViewController.m */,
+				CC21971F1924A05400FC3923 /* ZXAudioPlayView.h */,
+				CC2197201924A05400FC3923 /* ZXAudioPlayView.m */,
 				CCA69E131917B26F009A838A /* ZXScrolViewController.h */,
 				CCA69E141917B26F009A838A /* ZXScrolViewController.m */,
 				CCA69E101917B1BE009A838A /* ZXScrollView.h */,
@@ -448,6 +458,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA69DEF1917B0D9009A838A /* AppDelegate.m in Sources */,
+				CC2197211924A05400FC3923 /* ZXAudioPlayView.m in Sources */,
+				CCC0DF1A1924662C0086C30A /* ZXMusicTableViewController.m in Sources */,
 				CCA69E121917B1BE009A838A /* ZXScrollView.m in Sources */,
 				CCA69E151917B26F009A838A /* ZXScrolViewController.m in Sources */,
 				CCA69DEB1917B0D9009A838A /* main.m in Sources */,

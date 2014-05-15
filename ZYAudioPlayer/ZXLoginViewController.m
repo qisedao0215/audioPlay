@@ -11,6 +11,8 @@
 
 #import "ZXAudioViewController.h"
 
+#import "ZXMusicTableViewController.h"
+
 @interface ZXLoginViewController ()
 @property(nonatomic,retain)NSArray *musicArray;
 @end
@@ -51,18 +53,14 @@
 
     
     
-    
 }
 
 -(void)onBtn:(UIButton*)sender
 {
-    ZXAudioViewController *audioPlay=[[ZXAudioViewController alloc]init];
-    audioPlay.musicFile=self.musicArray;
-    audioPlay.musicStr=self.musicArray[1];
-    audioPlay.extension=@"mp3";
+    ZXMusicTableViewController  *tableView=[[ZXMusicTableViewController alloc]init];
+    tableView.tableMusicArray=self.musicArray;
     
-    [self.navigationController pushViewController:audioPlay animated:YES];
-    
+    [self.navigationController pushViewController:tableView animated:YES];
 
 }
 
@@ -76,6 +74,5 @@
 {
     self.navigationController.navigationBarHidden=YES;
 }
-
 
 @end

@@ -12,7 +12,6 @@
                 <outlet property="sliderDuration" destination="5Bw-eH-O1X" id="Q6a-Di-qsv"/>
                 <outlet property="sliderVolume" destination="UAK-uE-MCR" id="Hby-QN-M6f"/>
                 <outlet property="timerLabelView" destination="H44-hb-X1a" id="Na3-mg-Xbh"/>
-                <outlet property="timerView" destination="wdX-BL-cej" id="4pr-Hs-xJy"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -103,12 +102,6 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdX-BL-cej">
-                    <rect key="frame" x="188" y="371" width="70" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

@@ -36,7 +36,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        self.countMusic=5;
+       
         
     }
     return self;
@@ -77,7 +77,7 @@
     
     self.musicStr=self.musicFile[self.countMusic];
     
-    NSURL *strURL=[[NSBundle mainBundle]URLForResource:self.musicStr withExtension:self.extension];
+    NSURL *strURL=[[NSBundle mainBundle]URLForResource:self.musicStr withExtension:@"mp3"];
     self.audioPlay=[[AVAudioPlayer alloc]initWithContentsOfURL:strURL error:nil];
     [self.audioPlay prepareToPlay];
     self.audioPlay.delegate =self;
@@ -99,28 +99,7 @@
     lrcDictionary=[[NSMutableDictionary alloc]initWithCapacity:20];
     lrcDictionary=[self musicLrc:self.musicStr];
   
-//    NSString *strMusicUrl=[[NSBundle mainBundle]pathForResource:self.musicStr ofType:@"lrc"];
-//    NSString *strLrcKu=[NSString stringWithContentsOfFile:strMusicUrl encoding:NSUTF8StringEncoding error:nil];
-//    NSArray *strlineArray=[strLrcKu componentsSeparatedByString:@"\n"];
-//    for (int i=0; i<[strlineArray count]; i++) {
-//        NSString *lineStrKu=[strlineArray objectAtIndex:i];
-//        NSArray *lineComponents=[lineStrKu componentsSeparatedByString:@"]"];
-//        for (int n=0; n<[lineComponents count]; n++) {
-//
-//                if ([lineComponents[n] length]==9) {
-//                    NSString *strKuTimer = lineComponents[n];
-//                    NSString *str1=[strKuTimer substringWithRange:NSMakeRange(3, 1)];
-//                    NSString *str2=[strKuTimer substringWithRange:NSMakeRange(6, 1)];
-//                    
-//                    if ([str1 isEqualToString:@":"]&&[str2 isEqualToString:@"."]) {
-//                        NSString *lineTimer=[[lineComponents objectAtIndex:n] substringWithRange:NSMakeRange(1, 5)];
-//                        NSString *lineStr=[lineComponents objectAtIndex:([lineComponents count]-1)];
-//                        [lrcDictionary setObject:lineStr forKey:lineTimer];
-//                    
-//                    }
-//                }
-//        }
-//    }
+
     timerArray = [[lrcDictionary allKeys] mutableCopy];
     [timerArray sortUsingSelector:@selector(compare:)];
     playMusicStat=YES;
@@ -170,7 +149,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+    self.view.alpha=0;
     self.navigationController.navigationBarHidden=NO;
     self.navigationItem.hidesBackButton=NO;
 
@@ -192,7 +171,38 @@
     [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
    
     
+    AVAudioSession *session = [AVAudioSession sharedInstance];
+    [session setActive:YES error:nil];
+    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
 }
+
+- (void)remoteControlReceivedWithEvent:(UIEvent *)event
+{
+	if (event.type == UIEventTypeRemoteControl) {
+        switch (event.subtype) {
+            case UIEventSubtypeRemoteControlPlay:
+                [self onBtn:(nil)]; // 切换播放、暂停按钮
+                break;
+                
+            case UIEventSubtypeRemoteControlPause:
+                [self onBtn:(nil)]; // 切换播放、暂停按钮
+                break;
+                
+            case UIEventSubtypeRemoteControlPreviousTrack:
+                [self playPrev:(nil)]; // 播放上一曲按钮
+                break;
+                
+            case UIEventSubtypeRemoteControlNextTrack:
+                [self playNext:(nil)]; // 播放下一曲按钮
+                break;
+                
+            default:
+                break;
+        }
+    }
+}
+
 - (IBAction)sliderVolume:(UISlider *)sender {
     self.audioPlay.volume=sender.value;
 
@@ -266,12 +276,7 @@
                         break;
                     }
                 }
-
-
-            
-            
             }
-            
         }
     }
 }
@@ -283,11 +288,24 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)viewDidDisappear:(BOOL)animated
+
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidDisappear:animated];
-    [self.audioPlay stop];
-    playMusicStat=NO;
+	[super viewWillAppear:animated];
+	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+	[self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+	[super viewWillDisappear:animated];
+	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+	[self resignFirstResponder];
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+	return YES;
 }
 
 - (void)dealloc {
