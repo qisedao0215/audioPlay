@@ -13,12 +13,18 @@
 
 #import "ZXMusicTableViewController.h"
 
+
+#import "ZXAudioPlay.h"
+
 @interface ZXLoginViewController ()
 @property(nonatomic,retain)NSArray *musicArray;
 @end
 
 @implementation ZXLoginViewController
+{
+    ZXAudioPlay *audioPlay;
 
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -51,16 +57,18 @@
     
     [self.view addSubview:btn];
 
+    audioPlay=[ZXAudioPlay defPlay];
+               
+    audioPlay.musicFile=self.musicArray;
     
-    
+    [btn release],btn=nil;
 }
 
 -(void)onBtn:(UIButton*)sender
 {
     ZXMusicTableViewController  *tableView=[[ZXMusicTableViewController alloc]init];
-    tableView.tableMusicArray=self.musicArray;
-    
     [self.navigationController pushViewController:tableView animated:YES];
+  
 
 }
 
@@ -73,6 +81,12 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     self.navigationController.navigationBarHidden=YES;
+}
+-(void)dealloc
+{
+    [audioPlay release],audioPlay=nil;
+
+    [super dealloc];
 }
 
 @end

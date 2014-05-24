@@ -10,9 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 @interface ZXAudioViewController : UIViewController<AVAudioPlayerDelegate>
-@property(nonatomic,assign)NSString *musicStr;
-@property(nonatomic,retain)NSArray *musicFile;
-@property(nonatomic,assign)NSString *extension;
 
-@property(nonatomic,assign)NSInteger countMusic;
+
+@property(nonatomic,assign) NSInteger countMusic;
 @end

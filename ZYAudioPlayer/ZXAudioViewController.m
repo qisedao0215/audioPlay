@@ -8,19 +8,21 @@
 
 #import "ZXAudioViewController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ZXAudioPlay.h"
 
 @interface ZXAudioViewController ()
+
 @property (retain, nonatomic) IBOutlet UISlider *sliderVolume;
 @property (retain, nonatomic) IBOutlet UISlider *sliderDuration;
 @property (retain, nonatomic) IBOutlet UIButton *playBtn;
 @property (retain, nonatomic) IBOutlet UILabel *labelView;
 @property (retain, nonatomic) IBOutlet UILabel *lrcLabel;
 @property (retain, nonatomic) IBOutlet UILabel *timerLabelView;
-@property (retain, nonatomic) IBOutlet UILabel *timerView;
-
-@property(nonatomic,retain) AVAudioPlayer *audioPlay;
 
 
+
+@property(nonatomic,retain) ZXAudioPlay *audioPlayMusic;
+@property(nonatomic,copy)NSString *musicStr;
 @end
 
 @implementation ZXAudioViewController
@@ -29,7 +31,8 @@
     NSMutableDictionary *lrcDictionary;
   
     BOOL playMusicStat;
-
+    NSUInteger timer;
+    NSTimer *musicTimer;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,77 +45,70 @@
     return self;
 }
 - (IBAction)playNext:(UIButton *)sender {
-    
-    if (self.countMusic == [self.musicFile count]-1) {
-        self.countMusic=-1;
+    if (self.audioPlayMusic.countMusic == [self.audioPlayMusic.musicFile count]-1) {
+        self.audioPlayMusic.countMusic = -1;
     }
-    self.musicStr=self.musicFile[self.countMusic+=1];
-    [self playMusic];
-    [self.audioPlay play];
     
+    self.audioPlayMusic.musicStr=self.audioPlayMusic.musicFile[self.audioPlayMusic.countMusic+=1];
+    
+    [self playMusic];
+    [self.audioPlayMusic.audioPlay play];
+    
+    playMusicStat=YES;
 }
 - (IBAction)playPrev:(UIButton *)sender {
-    if (self.countMusic < 1) {
-        self.countMusic = [self.musicFile count];
-    }
 
-    self.musicStr=self.musicFile[self.countMusic-=1];
+    if (self.audioPlayMusic.countMusic < 1) {
+        self.audioPlayMusic.countMusic = [self.audioPlayMusic.musicFile count];
+    }
+    
+    self.audioPlayMusic.musicStr=self.audioPlayMusic.musicFile[self.audioPlayMusic.countMusic-=1];
+  
     [self playMusic];
-    [self.audioPlay play];
+    [self.audioPlayMusic.audioPlay play];
+    
+    playMusicStat=YES;
     
 }
 
-//-(void)
-
-
-- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
-{
-    [self playNext:nil];
-}
 
 -(void)playMusic
 {
-    [self.audioPlay stop];
+    [self.audioPlayMusic stopMusicPlay];
+    
+    [self.audioPlayMusic playMusic];
+  
+    [self.audioPlayMusic.audioPlay prepareToPlay];
+  
+    self.musicStr=self.audioPlayMusic.musicStr;
+   
+ 
+    [self lableTimer];
+    
     playMusicStat=NO;
     
-    self.musicStr=self.musicFile[self.countMusic];
     
-    NSURL *strURL=[[NSBundle mainBundle]URLForResource:self.musicStr withExtension:@"mp3"];
-    self.audioPlay=[[AVAudioPlayer alloc]initWithContentsOfURL:strURL error:nil];
-    [self.audioPlay prepareToPlay];
-    self.audioPlay.delegate =self;
-
-    self.sliderDuration.value=0;
-    self.sliderDuration.maximumValue=self.audioPlay.duration;
     
+    self.sliderDuration.value=0.0;
+    self.sliderDuration.maximumValue=self.audioPlayMusic.audioPlay.duration;
+    
+    self.labelView.text=self.musicStr;
+    self.lrcLabel.text=self.musicStr;
     
     [self.playBtn setImage:[UIImage imageNamed:@"AudioPlayerPause"] forState:UIControlStateNormal];
     
-    self.labelView.text=self.musicFile[self.countMusic];
-    
-    self.lrcLabel.text=self.musicFile[self.countMusic];
-    
-    timerArray=nil;
-    lrcDictionary=nil;
-    
-    timerArray =[[NSMutableArray alloc]init];
-    lrcDictionary=[[NSMutableDictionary alloc]initWithCapacity:20];
-    lrcDictionary=[self musicLrc:self.musicStr];
-  
-
-    timerArray = [[lrcDictionary allKeys] mutableCopy];
-    [timerArray sortUsingSelector:@selector(compare:)];
-    playMusicStat=YES;
-
+    [self musicLrc];
 }
 
--(NSMutableDictionary*)musicLrc:(NSString*)musicName
+//歌词显示
+//自定义方法
+-(void)musicLrc
 {
-    
-    //    初始化一个字典
-    NSMutableDictionary *musicLrcDictionary=[[NSMutableDictionary alloc]initWithCapacity:20];
-    //    加载歌词到内存
-    NSString *strMusicUrl=[[NSBundle mainBundle]pathForResource:musicName ofType:@"lrc"];
+    self.labelView.text=self.musicStr;
+    self.lrcLabel.text=self.musicStr;
+    [timerArray removeAllObjects];
+    [lrcDictionary removeAllObjects];
+    NSString *strMusicUrl=[[NSBundle mainBundle]pathForResource:self.musicStr ofType:@"lrc"];
     NSString *strLrcKu=[NSString stringWithContentsOfFile:strMusicUrl encoding:NSUTF8StringEncoding error:nil];
     //    把文件安行分割，以每行为单位放入数组
     NSArray *strlineArray=[strLrcKu componentsSeparatedByString:@"\n"];
@@ -123,6 +119,7 @@
         //        取出每行的时间  注意有些歌词是重复使用的，所以会有多个时间点
         for (int n=0; n<[lineComponents count]; n++) {
             NSString *strKuTimer = lineComponents[n];
+            //"[03:12.23][02:38.68][01:12.38]哥有老婆 请你别爱我,"  这样的时间串取，安九个字符串去取。
             if ([strKuTimer length]==9) {
                 //    取出“:”和“.”符号来对比，是否是我们所需要的时间
                 NSString *str1=[strKuTimer substringWithRange:NSMakeRange(3, 1)];
@@ -132,111 +129,112 @@
                     NSString *lineTimer=[[lineComponents objectAtIndex:n] substringWithRange:NSMakeRange(1, 5)];
                     NSString *lineStr=[lineComponents objectAtIndex:([lineComponents count]-1)];
                     //    以时间为key,歌词为值，放入字典中
-                    [musicLrcDictionary setObject:lineStr forKey:lineTimer];
+                    [lrcDictionary setObject:lineStr forKey:lineTimer];
                 }
-            } 
+            }
         }
     }
-    //    在这里返回整个字典
-    return musicLrcDictionary;
     
+    
+    timerArray = [[lrcDictionary allKeys] mutableCopy];
+    [timerArray sortUsingSelector:@selector(compare:)];
+
 }
-
-
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-    self.view.alpha=0;
+
     self.navigationController.navigationBarHidden=NO;
     self.navigationItem.hidesBackButton=NO;
 
-    self.view.backgroundColor=[UIColor redColor];
-
     self.labelView.tintColor=[UIColor greenColor];
     
-    self.sliderVolume.value=0.5;
+    self.sliderVolume.value=1.0;
     self.sliderVolume.maximumValue=1.0;
     self.sliderVolume.minimumValue=0.0;
     
+    self.sliderDuration.minimumValue=0.0;
     
-    
-    [self playMusic];
-    [self.playBtn setImage:[UIImage imageNamed:@"AudioPlayerPlay"] forState:UIControlStateNormal];
-    
+    timerArray =[[NSMutableArray alloc]init];
+    lrcDictionary=[[NSMutableDictionary alloc]initWithCapacity:100];
     
     playMusicStat=YES;
-    [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
-   
     
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setActive:YES error:nil];
-    [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+    musicTimer=[NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(onTimer:) userInfo:nil repeats:YES];
+    _audioPlayMusic=[ZXAudioPlay defPlay];
     
-}
+    _musicStr=self.audioPlayMusic.musicFile[self.countMusic];
+    if ([(self.musicStr) isEqualToString:self.audioPlayMusic.musicStr]) {
+        
+        self.sliderDuration.maximumValue=self.audioPlayMusic.audioPlay.duration;
+        playMusicStat=YES;
+        [self.playBtn setImage:[UIImage imageNamed:@"AudioPlayerPause"] forState:UIControlStateNormal];
+        [self musicLrc];
 
-- (void)remoteControlReceivedWithEvent:(UIEvent *)event
-{
-	if (event.type == UIEventTypeRemoteControl) {
-        switch (event.subtype) {
-            case UIEventSubtypeRemoteControlPlay:
-                [self onBtn:(nil)]; // 切换播放、暂停按钮
-                break;
-                
-            case UIEventSubtypeRemoteControlPause:
-                [self onBtn:(nil)]; // 切换播放、暂停按钮
-                break;
-                
-            case UIEventSubtypeRemoteControlPreviousTrack:
-                [self playPrev:(nil)]; // 播放上一曲按钮
-                break;
-                
-            case UIEventSubtypeRemoteControlNextTrack:
-                [self playNext:(nil)]; // 播放下一曲按钮
-                break;
-                
-            default:
-                break;
-        }
+    }else{
+ 
+        [self playMusic];
+
+        [self onTimer:nil];
+       
+        [self.audioPlayMusic.audioPlay play];
+        playMusicStat=YES;
     }
+   
 }
 
+//音乐的声音控制条
+//IB初始化
 - (IBAction)sliderVolume:(UISlider *)sender {
-    self.audioPlay.volume=sender.value;
 
+    
+    self.audioPlayMusic.audioPlay.volume=sender.value;
+ 
+   
 }
+//播放，暂停按键
+//IB初始化
 - (IBAction)onBtn:(UIButton *)sender {
     
-    if ([self.audioPlay isPlaying]) {
+    if ([self.audioPlayMusic.audioPlay isPlaying]) {
         [sender setImage:[UIImage imageNamed:@"AudioPlayerPlay"] forState:UIControlStateNormal];
-        [self.audioPlay pause];
+        [self.audioPlayMusic.audioPlay pause];
         playMusicStat=NO;
         
     }else{
-        [self.audioPlay play];
+
+        [self.audioPlayMusic.audioPlay play];
         [sender setImage:[UIImage imageNamed:@"AudioPlayerPause"] forState:UIControlStateNormal];
         playMusicStat=YES;
     }
+  
 }
+//歌曲进度条
+//IB初始化
 - (IBAction)sliderDuration:(UISlider *)sender {
-    self.audioPlay.currentTime = sender.value;
+
+    if (sender.value>self.audioPlayMusic.audioPlay.duration-1) {
+        [self playNext:nil];
+    }
+    self.audioPlayMusic.audioPlay.currentTime=sender.value;
+   
 }
+//定时器执行动作
+//自定义方法
 -(void)onTimer:(NSTimer*)sender
 {
     if (playMusicStat) {
-
-        NSUInteger timer=(int)self.audioPlay.currentTime;
-        if ((int)timer % 60 < 10) {
-            self.timerLabelView.text = [NSString stringWithFormat:@"0%d:0%d",timer / 60, timer % 60];
-        } else {
-            self.timerLabelView.text = [NSString stringWithFormat:@"0%d:%d",timer / 60, timer % 60];
-        }
         
+        [self lableTimer];
         self.sliderDuration.value=timer;
-
+ 
+       
         
+        if (timer>self.audioPlayMusic.audioPlay.duration-1) {
+            [self playNext:nil];
+        }
+ ////////////////////////////
         for (int i=0; i < [timerArray count]; i++) {
             NSArray *array = [timerArray[i] componentsSeparatedByString:@":"];
             NSUInteger currentTime = [array[0] intValue] * 60 + [array[1] intValue];
@@ -252,6 +250,7 @@
                         break;
                     }
                 }
+                
             }else{
                 NSArray *array2 = [timerArray[0] componentsSeparatedByString:@":"];
                 NSUInteger currentTime2 = [array2[0] intValue] * 60 + [array2[1] intValue];
@@ -278,49 +277,43 @@
                 }
             }
         }
+        
+
+    }
+
+    
+}
+
+//取出当前的播放时间。
+//自定义方法
+-(void)lableTimer
+{
+    timer=self.audioPlayMusic.audioPlay.currentTime;
+    if (timer % 60 < 10) {
+        _timerLabelView.text = [NSString stringWithFormat:@"0%d:0%d",timer / 60, timer % 60];
+    } else {
+        _timerLabelView.text = [NSString stringWithFormat:@"0%d:%d",timer / 60, timer % 60];
     }
 }
-
-
-
-- (void)didReceiveMemoryWarning
+//销毁定时器
+//系统方法
+-(void)viewWillDisappear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillDisappear:YES];
+    [musicTimer invalidate];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-	[[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
-	[self becomeFirstResponder];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
-	[[UIApplication sharedApplication] endReceivingRemoteControlEvents];
-	[self resignFirstResponder];
-}
-
-- (BOOL)canBecomeFirstResponder
-{
-	return YES;
-}
 
 - (void)dealloc {
-    
-    [_extension release];
-    [_musicFile release];
+
     [_musicStr release];
-    [_audioPlay release];
     [_sliderDuration release];
     [_sliderVolume release];
     [_playBtn release];
     [_labelView release];
     [_lrcLabel release];
     [_timerLabelView release];
-    [_timerView release];
+
     [super dealloc];
     
 }

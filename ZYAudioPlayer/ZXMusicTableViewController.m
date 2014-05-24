@@ -8,10 +8,11 @@
 
 #import "ZXMusicTableViewController.h"
 #import "ZXAudioViewController.h"
-#import "ZXAudioPlayView.h"
+#import "ZXAudioPlay.h"
+
 
 @interface ZXMusicTableViewController ()
-@property (nonatomic,strong)ZXAudioPlayView *audioplay;
+@property (nonatomic,retain)ZXAudioPlay *audioPlayZX;
 @end
 static NSString *cellFile=@"cell";
 @implementation ZXMusicTableViewController
@@ -34,12 +35,14 @@ static NSString *cellFile=@"cell";
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    self.audioplay=[[ZXAudioPlayView alloc]initWithFrame:self.view.bounds];
-    self.audioplay.musicFile=self.tableMusicArray;
-    [self.view addSubview:self.audioplay];
-    self.audioplay.alpha=0;
-     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellFile];
+    _audioPlayZX=[ZXAudioPlay defPlay];
+    _tableMusicArray=self.audioPlayZX.musicFile;
+    
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellFile];
+    
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -48,6 +51,7 @@ static NSString *cellFile=@"cell";
 }
 
 - (void)didReceiveMemoryWarning
+
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -78,18 +82,14 @@ static NSString *cellFile=@"cell";
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    _audioPlayZX.countMusic=indexPath.row;
     
     ZXAudioViewController *audioView=[[ZXAudioViewController alloc]init];
-    audioView.musicFile=self.tableMusicArray;
     audioView.countMusic=indexPath.row;
-    [self.navigationController pushViewController:audioView animated:YES];
     
-//    if (self.audioplay.countMusic!=indexPath.row) {
-//        self.audioplay.countMusic=indexPath.row;
-//        [self.audioplay playMusicZX];
-//    }
-//    self.navigationController.navigationBarHidden=YES;
-//    self.audioplay.alpha=1;
+    
+    [self.navigationController pushViewController:audioView animated:YES];
+    [audioView release],audioView=nil;
 }
 
 

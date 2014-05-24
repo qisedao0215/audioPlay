@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC2197211924A05400FC3923 /* ZXAudioPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2197201924A05400FC3923 /* ZXAudioPlayView.m */; };
 		CC5932AC191BABFC00AE9AC9 /* 传奇.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CC5932AB191BABFC00AE9AC9 /* 传奇.mp3 */; };
 		CC5932B2191BC59200AE9AC9 /* ZXAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */; };
 		CC5932B3191BC59200AE9AC9 /* ZXAudioViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC5932B1191BC59200AE9AC9 /* ZXAudioViewController.xib */; };
@@ -24,7 +23,6 @@
 		CC6B3EF2191D16D300260C9D /* circleOpen.png in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF1191D16D300260C9D /* circleOpen.png */; };
 		CC6B3EF4191D20E000260C9D /* 媳妇你真好.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF3191D20E000260C9D /* 媳妇你真好.lrc */; };
 		CC6B3EF8191D20EE00260C9D /* 老婆最大.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF5191D20EE00260C9D /* 老婆最大.lrc */; };
-		CC6B3EFA191D20EE00260C9D /* 哥有老婆.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CC6B3EF7191D20EE00260C9D /* 哥有老婆.lrc */; };
 		CCA69DDF1917B0D9009A838A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA69DDE1917B0D9009A838A /* Foundation.framework */; };
 		CCA69DE11917B0D9009A838A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA69DE01917B0D9009A838A /* CoreGraphics.framework */; };
 		CCA69DE31917B0D9009A838A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA69DE21917B0D9009A838A /* UIKit.framework */; };
@@ -40,6 +38,7 @@
 		CCA69E0F1917B124009A838A /* ZXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E0E1917B124009A838A /* ZXLoginViewController.m */; };
 		CCA69E121917B1BE009A838A /* ZXScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E111917B1BE009A838A /* ZXScrollView.m */; };
 		CCA69E151917B26F009A838A /* ZXScrolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA69E141917B26F009A838A /* ZXScrolViewController.m */; };
+		CCBF039A192704AA002B3CFB /* ZXAudioPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBF0399192704AA002B3CFB /* ZXAudioPlay.m */; };
 		CCC0DF1A1924662C0086C30A /* ZXMusicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC0DF191924662C0086C30A /* ZXMusicTableViewController.m */; };
 		CCD683A2191CC25A0068DE33 /* IMG_1464.JPG in Resources */ = {isa = PBXBuildFile; fileRef = CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */; };
 		CCDFCA271917D3AA003F7DD2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCDFCA261917D3AA003F7DD2 /* AVFoundation.framework */; };
@@ -55,7 +54,6 @@
 		CCF8958C191C78CE0005EAEF /* 一万个舍不得.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89581191C78CE0005EAEF /* 一万个舍不得.mp3 */; };
 		CCF8958D191C78CE0005EAEF /* 月亮惹的祸.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89582191C78CE0005EAEF /* 月亮惹的祸.mp3 */; };
 		CCF8958E191C78CE0005EAEF /* 咱们结婚吧.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CCF89583191C78CE0005EAEF /* 咱们结婚吧.mp3 */; };
-		CCF89590191CAD2F0005EAEF /* 爱情鸟.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF8958F191CAD2F0005EAEF /* 爱情鸟.lrc */; };
 		CCF89594191CADAF0005EAEF /* 爱囚.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF89591191CADAF0005EAEF /* 爱囚.lrc */; };
 		CCF89596191CADAF0005EAEF /* 爸爸去哪儿.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */; };
 		CCF9FE9A191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc in Resources */ = {isa = PBXBuildFile; fileRef = CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */; };
@@ -77,8 +75,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		CC21971F1924A05400FC3923 /* ZXAudioPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAudioPlayView.h; sourceTree = "<group>"; };
-		CC2197201924A05400FC3923 /* ZXAudioPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAudioPlayView.m; sourceTree = "<group>"; };
 		CC5932AB191BABFC00AE9AC9 /* 传奇.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "传奇.mp3"; sourceTree = "<group>"; };
 		CC5932AF191BC59200AE9AC9 /* ZXAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAudioViewController.h; sourceTree = "<group>"; };
 		CC5932B0191BC59200AE9AC9 /* ZXAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAudioViewController.m; sourceTree = "<group>"; };
@@ -96,7 +92,6 @@
 		CC6B3EF1191D16D300260C9D /* circleOpen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleOpen.png; sourceTree = "<group>"; };
 		CC6B3EF3191D20E000260C9D /* 媳妇你真好.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "媳妇你真好.lrc"; sourceTree = "<group>"; };
 		CC6B3EF5191D20EE00260C9D /* 老婆最大.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "老婆最大.lrc"; sourceTree = "<group>"; };
-		CC6B3EF7191D20EE00260C9D /* 哥有老婆.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "哥有老婆.lrc"; sourceTree = "<group>"; };
 		CCA69DDB1917B0D9009A838A /* ZYAudioPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYAudioPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCA69DDE1917B0D9009A838A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CCA69DE01917B0D9009A838A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -119,6 +114,8 @@
 		CCA69E111917B1BE009A838A /* ZXScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScrollView.m; sourceTree = "<group>"; };
 		CCA69E131917B26F009A838A /* ZXScrolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXScrolViewController.h; sourceTree = "<group>"; };
 		CCA69E141917B26F009A838A /* ZXScrolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScrolViewController.m; sourceTree = "<group>"; };
+		CCBF0398192704AA002B3CFB /* ZXAudioPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAudioPlay.h; sourceTree = "<group>"; };
+		CCBF0399192704AA002B3CFB /* ZXAudioPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAudioPlay.m; sourceTree = "<group>"; };
 		CCC0DF181924662C0086C30A /* ZXMusicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMusicTableViewController.h; sourceTree = "<group>"; };
 		CCC0DF191924662C0086C30A /* ZXMusicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMusicTableViewController.m; sourceTree = "<group>"; };
 		CCD683A1191CC25A0068DE33 /* IMG_1464.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1464.JPG; sourceTree = "<group>"; };
@@ -135,7 +132,6 @@
 		CCF89581191C78CE0005EAEF /* 一万个舍不得.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "一万个舍不得.mp3"; sourceTree = "<group>"; };
 		CCF89582191C78CE0005EAEF /* 月亮惹的祸.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "月亮惹的祸.mp3"; sourceTree = "<group>"; };
 		CCF89583191C78CE0005EAEF /* 咱们结婚吧.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "咱们结婚吧.mp3"; sourceTree = "<group>"; };
-		CCF8958F191CAD2F0005EAEF /* 爱情鸟.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爱情鸟.lrc"; sourceTree = "<group>"; };
 		CCF89591191CADAF0005EAEF /* 爱囚.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爱囚.lrc"; sourceTree = "<group>"; };
 		CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "爸爸去哪儿.lrc"; sourceTree = "<group>"; };
 		CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "好男人寂寞了也犯错.lrc"; sourceTree = "<group>"; };
@@ -201,13 +197,11 @@
 		CC6B3EFB191D212E00260C9D /* musicLrc */ = {
 			isa = PBXGroup;
 			children = (
-				CCF8958F191CAD2F0005EAEF /* 爱情鸟.lrc */,
 				CCF89591191CADAF0005EAEF /* 爱囚.lrc */,
+				CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */,
 				CCF9FE99191E2BBA00EF9B5A /* 好男人寂寞了也犯错.lrc */,
 				CC6B3EF5191D20EE00260C9D /* 老婆最大.lrc */,
-				CC6B3EF7191D20EE00260C9D /* 哥有老婆.lrc */,
 				CC6B3EF3191D20E000260C9D /* 媳妇你真好.lrc */,
-				CCF89593191CADAF0005EAEF /* 爸爸去哪儿.lrc */,
 			);
 			name = musicLrc;
 			sourceTree = "<group>";
@@ -256,8 +250,8 @@
 				CC5932B1191BC59200AE9AC9 /* ZXAudioViewController.xib */,
 				CCC0DF181924662C0086C30A /* ZXMusicTableViewController.h */,
 				CCC0DF191924662C0086C30A /* ZXMusicTableViewController.m */,
-				CC21971F1924A05400FC3923 /* ZXAudioPlayView.h */,
-				CC2197201924A05400FC3923 /* ZXAudioPlayView.m */,
+				CCBF0398192704AA002B3CFB /* ZXAudioPlay.h */,
+				CCBF0399192704AA002B3CFB /* ZXAudioPlay.m */,
 				CCA69E131917B26F009A838A /* ZXScrolViewController.h */,
 				CCA69E141917B26F009A838A /* ZXScrolViewController.m */,
 				CCA69E101917B1BE009A838A /* ZXScrollView.h */,
@@ -409,7 +403,6 @@
 				CCF89587191C78CE0005EAEF /* 爸爸去哪儿.mp3 in Resources */,
 				CCF89589191C78CE0005EAEF /* 好男人寂寞了也犯错.mp3 in Resources */,
 				CCF89588191C78CE0005EAEF /* 哥有老婆.mp3 in Resources */,
-				CCF89590191CAD2F0005EAEF /* 爱情鸟.lrc in Resources */,
 				CC5E6A2F191C5C3800AED641 /* AudioPlayerNextTrack.png in Resources */,
 				CC5E6A2D191C5C2200AED641 /* AudioPlayerPause.png in Resources */,
 				CCF9FEA41920A07200EF9B5A /* Default-568h@2x.png in Resources */,
@@ -420,7 +413,6 @@
 				CCF89585191C78CE0005EAEF /* 爱囚.mp3 in Resources */,
 				CC6B3EF0191D164F00260C9D /* menu.png in Resources */,
 				CC61F0DA1917B3060020EC0D /* new_features_1.jpg in Resources */,
-				CC6B3EFA191D20EE00260C9D /* 哥有老婆.lrc in Resources */,
 				CC5932AC191BABFC00AE9AC9 /* 传奇.mp3 in Resources */,
 				CCF9FEA21920A01100EF9B5A /* Images-3.xcassets in Resources */,
 				CC61F0DB1917B3060020EC0D /* new_features_2.jpg in Resources */,
@@ -458,10 +450,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CCA69DEF1917B0D9009A838A /* AppDelegate.m in Sources */,
-				CC2197211924A05400FC3923 /* ZXAudioPlayView.m in Sources */,
 				CCC0DF1A1924662C0086C30A /* ZXMusicTableViewController.m in Sources */,
 				CCA69E121917B1BE009A838A /* ZXScrollView.m in Sources */,
 				CCA69E151917B26F009A838A /* ZXScrolViewController.m in Sources */,
+				CCBF039A192704AA002B3CFB /* ZXAudioPlay.m in Sources */,
 				CCA69DEB1917B0D9009A838A /* main.m in Sources */,
 				CCA69E0F1917B124009A838A /* ZXLoginViewController.m in Sources */,
 				CC5932B2191BC59200AE9AC9 /* ZXAudioViewController.m in Sources */,
